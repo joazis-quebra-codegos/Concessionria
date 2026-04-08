@@ -33,6 +33,9 @@ public class Carro {
     @NotNull(message = "Ano é obrigatório")
     private Integer ano;
 
+    @NotNull
+    private Boolean disponivel;
+
     public Carro(){
     }
 }

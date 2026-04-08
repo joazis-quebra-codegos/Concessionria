@@ -37,4 +37,16 @@ public class CarroService {
         carro.setId(id);
         return carroRepository.save(carro);
     }
+
+    public List<Carro> buscarPorMarca(String marca){
+        return carroRepository.findByMarcaContainingIgnoreCase(marca);
+    }
+
+    public List<Carro> buscarPorAno(Integer ano){
+        return carroRepository.findByAnoContainingIgnoreCase(ano);
+    }
+
+    public List<Carro> buscarPorPreco(Double preco){
+        return carroRepository.findByPrecoLessThan(preco);
+    }
 }

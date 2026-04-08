@@ -1,5 +1,6 @@
 package org.example.concessionariajpa.controller;
 
+import jakarta.validation.Valid;
 import org.example.concessionariajpa.model.Carro;
 import org.example.concessionariajpa.service.CarroService;
 import org.springframework.web.bind.annotation.*;
@@ -28,7 +29,7 @@ public class CarroController {
     }
 
     @PostMapping
-    public Carro salvar(@RequestBody Carro carro){
+    public Carro salvar(@RequestBody @Valid Carro carro){
         return carroService.salvar(carro);
     }
 
