@@ -43,5 +43,8 @@ public class CarroController {
         carroService.deletar(id);
     }
 
-
+    @GetMapping("/buscarPorMarca")
+    public List<Carro> buscarPorMarca(@RequestParam String marca){
+        return carroService.buscarPorMarca(marca);
+    }
 }

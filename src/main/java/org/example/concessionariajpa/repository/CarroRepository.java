@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface CarroRepository extends JpaRepository<Carro, Long> {
     List<Carro> findByMarcaContainingIgnoreCase(String marca);
-    List<Carro> findByAnoContainingIgnoreCase(Integer ano);
+    List<Carro> findByAno(Integer ano);
     List<Carro> findByPrecoLessThan(Double preco);
 }

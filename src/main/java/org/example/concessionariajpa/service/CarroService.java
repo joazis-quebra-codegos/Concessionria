@@ -43,7 +43,7 @@ public class CarroService {
     }
 
     public List<Carro> buscarPorAno(Integer ano){
-        return carroRepository.findByAnoContainingIgnoreCase(ano);
+        return carroRepository.findByAno(ano);
     }
 
     public List<Carro> buscarPorPreco(Double preco){
