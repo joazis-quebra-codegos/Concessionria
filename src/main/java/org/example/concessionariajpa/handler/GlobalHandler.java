@@ -21,4 +21,12 @@ public class GlobalHandler {
         });
         return erros;
     }
+
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public Map<String, String> tratarErro(MethodArgumentNotValidException ex){
+        Map<String, String> erros = new HashMap<>();
+        erros.put("Erro", ex.getMessage());
+        return erros;
+    }
 }
