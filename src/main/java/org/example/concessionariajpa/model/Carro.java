@@ -7,7 +7,7 @@ import lombok.Data;
 import lombok.Generated;
 import lombok.Getter;
 import lombok.Setter;
-@Table(name = "TBCARRO")
+@Table(name = "tbcarro")
 @Entity
 @Getter
 @Setter

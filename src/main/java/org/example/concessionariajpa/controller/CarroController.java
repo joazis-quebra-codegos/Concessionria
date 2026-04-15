@@ -47,4 +47,14 @@ public class CarroController {
     public List<Carro> buscarPorMarca(@RequestParam String marca){
         return carroService.buscarPorMarca(marca);
     }
+
+    @GetMapping("/buscarPorAno")
+    public List<Carro> buscarPorAno(@RequestParam Integer ano){
+        return carroService.buscarPorAno(ano);
+    }
+
+    @GetMapping("/buscarPorPreco")
+    public List<Carro> buscarPorPreco(@RequestParam Double preco){
+        return carroService.buscarPorPreco(preco);
+    }
 }
