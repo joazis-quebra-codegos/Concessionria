@@ -7,11 +7,11 @@ import lombok.Data;
 import lombok.Generated;
 import lombok.Getter;
 import lombok.Setter;
-
+@Table(name = "TBCARRO")
 @Entity
 @Getter
 @Setter
-@Table(name = "TBCARRO")
+@Data
 public class Carro {
 
     @Id
@@ -33,7 +33,7 @@ public class Carro {
     @NotNull(message = "Ano é obrigatório")
     private Integer ano;
 
-    @NotNull
+    @NotNull(message = "Disponibilidade é obrigatória")
     private Boolean disponivel;
 
     public Carro(){

@@ -9,7 +9,7 @@ import java.util.List;
 @Service
 public class CarroService {
 
-    CarroRepository carroRepository;
+    private final CarroRepository carroRepository;
 
     public CarroService(CarroRepository carroRepository){
         this.carroRepository = carroRepository;
@@ -17,7 +17,7 @@ public class CarroService {
 
     public Carro buscar(Long id){
         return carroRepository.findById(id).
-                orElseThrow(() -> new RuntimeException("Carro não encontrado"));
+                orElseThrow(() -> new RuntimeException("Carro não encontrado com id: " + id));
     }
 
     public List<Carro> listar(){
@@ -29,6 +29,7 @@ public class CarroService {
     }
 
     public void deletar(Long id){
+        buscar(id); // garante que existe
         carroRepository.deleteById(id);
     }
 

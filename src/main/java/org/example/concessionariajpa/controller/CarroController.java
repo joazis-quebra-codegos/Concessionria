@@ -12,7 +12,7 @@ import java.util.List;
 @RequestMapping("/carros")
 public class CarroController {
 
-    CarroService carroService;
+    private final CarroService carroService;
 
     public CarroController(CarroService carroService){
         this.carroService = carroService;
@@ -33,12 +33,12 @@ public class CarroController {
         return carroService.salvar(carro);
     }
 
-    @PutMapping
-    public Carro atualizar(@RequestBody Carro carro, @PathVariable Long id){
+    @PutMapping("/{id}")
+    public Carro atualizar(@RequestBody @Valid Carro carro, @PathVariable Long id){
         return carroService.atualizar(carro, id);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public void deletar(@PathVariable Long id){
         carroService.deletar(id);
     }
